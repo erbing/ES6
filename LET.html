@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 语法</title>
+</head>
+<body>
+
+    <script>
+
+    //如果使用let，声明的变量仅在块级作用域内有效
+        {
+            var a = 1;
+            let b = 2;
+        }
+
+        console.log(a);  // 1
+        console.log(b);  // Uncaught ReferenceError: b is not defined
+
+        var arr = [1,2,3]
+
+        for (let i = 0, l = arr.length; i < l; ++i) {}
+
+        console.log(i);
+
+    //上面代码中，变量i是let声明的，当前的i只在本轮循环有效
+        
+        var arr = [];
+        for (let i = 0, l = 10; i < l; ++i) {
+            arr[i] = function() {
+                console.log(i);
+            }    
+        }
+
+        arr[6]();  //?
+    
+    //不存在变量提升
+        
+        console.log(foo);
+        console.log(bar);  //报错
+
+        var foo = 2;
+        let bar = 2;
+
+    //块级作用域和 函数声明
+    function f() { console.log('I am outside!'); }
+    (function () {
+      f();
+    }());
+
+
+    function f() { console.log('I am outside!'); }
+    (function () {
+      
+      if (false) {
+        function f() { console.log('I am inside!'); }
+      }
+
+      f();
+    }());  
+
+    </script>
+    
+</body>
+</html>

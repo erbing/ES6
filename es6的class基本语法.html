@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class 的基本语法</title>
+</head>
+<body>
+    
+    <script>
+        
+        'use strict'
+        // es6 的 类的概念
+        class Point {
+          constructor(x, y) {
+            this.x = x;
+            this.y = y;
+          }
+
+          toString() {
+            return '(' + this.x + ', ' + this.y + ')';
+          }
+        }        
+
+        var point = new Point(1,2);
+        console.log(point.toString());
+
+        //可以写出 立即执行的 Class 类
+        
+        let person = new class {
+          constructor(name) {
+            this.name = name;
+          }
+
+          sayName() {
+            return this.name;
+          }
+        }('张三');
+
+        const result = person.sayName(); // "张三"
+
+        console.log(result);
+    </script>
+
+</body>
+</html>
