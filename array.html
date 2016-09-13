@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    
+    <script>
+    function getTenNum(n) {
+        var reslut = [];
+        var testArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+        for (var i = 0; i < n; ++i) {
+            var random = Math.floor(Math.random() * testArray.length);
+            reslut.push(testArray[random]);
+            testArray.splice(random,1);
+        }
+        return reslut;        
+    }
+    var resArr = getTenNum(10);
+    </script>
+
+</body>
+</html>

@@ -30,19 +30,17 @@
 
 // ES7
 
-const name = () => {
-    return new Promise( function(resolve,reject){
-        setTimeout(function(){
-            resolve(112);
-        },2000);
+const f = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(123);
+        }, 2000);
     });
 };
 
 const testAsync = async () => {
-    const t = await name();
+    const t = await f();
     console.log(t);
-}
+};
 
 testAsync();
-
-456

@@ -1,0 +1,37 @@
+{
+  "name": "20160901",
+  "version": "1.0.0",
+  "description": "ES6 DEMO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init": "npm install --registry=https://registry.npm.taobao.org"
+  },
+  "dependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-runtime": "6.x.x",
+    "source-map-support": "0.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-cli": "6.x.x",
+    "babel-preset-es2015-loose": "6.x.x",
+    "babel-preset-stage-1": "6.x.x",
+    "babel-plugin-transform-runtime": "6.x.x",
+    "babel-core": "6.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erbing/ES6.git"
+  },
+  "keywords": [
+    "ES7",
+    "ESlint"
+  ],
+  "author": "erbing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erbing/ES6/issues"
+  },
+  "homepage": "https://github.com/erbing/ES6#readme"
+}
