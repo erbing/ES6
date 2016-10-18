@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    
+<script type="text/javascript">
+
+    var count = (function() {
+        var x = 0;
+        return function() {
+            x++;
+            if(x>3) x = 1;
+            return x;
+        };
+    })();
+
+    console.log(count());
+    console.log(count());
+    console.log(count());
+
+    console.log(count());
+    console.log(count());
+    console.log(count());
+</script>
+
+</body>
+</html>

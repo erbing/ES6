@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJS components test</title>
+</head>
+
+<style type="text/css">
+    div{
+        margin: 10px;
+        padding: 10px;
+        background: green;
+        color: #fff;
+    }
+</style>
+
+
+<body>
+
+    <div><h4>{{commenData}}</h4></div>
+
+    <ui-m :msg-m='datam' :commen-data.sync='commenData'></ui-m>
+    <ui-n :msg-n='datan' :commen-data='commenData'></ui-n>
+ 
+    <script src="libs/vue.js"></script>
+    <script src="js/cp.js"></script>
+</body>
+</html>
