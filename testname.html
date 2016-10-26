@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    
+<script>
+    function a(x){
+        // console.log(x);
+        return function b(y) {
+            console.log(y);
+            return ++x+y;
+        };
+    }
+
+    var a = a(10);
+    // var b = a(20);
+
+    console.log(a(10), a(20));
+</script>
+
+</body>
+</html>
