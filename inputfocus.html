@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body style="font-size:40px">
+    
+<div>
+    <input type="text" id="input" autofocus/>
+    <br>
+    <button id="btn">Click</button>
+</div>
+
+<script type="text/javascript">
+
+    window.onload = function() {
+        var inputDom = document.getElementById('input');
+        var btn = document.getElementById('btn');
+        // Type1 : 直接触发 input 的 focus 事件
+        // inputDom.focus();
+     
+        // inputDom.onclick = function() {
+        //     this.focus();
+        // }
+
+        // Type2 : 通过点击其他元素触发 focus 事件
+        // btn.onclick = function() {
+            
+        //     inputDom.click();
+        // }
+
+        
+        // btn.click();
+        
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

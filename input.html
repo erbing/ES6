@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    
+    <div>
+        <input type="radio" value="false" name="hahah" checked="checked">
+        <input type="radio" value="true" name="hahah">
+    </div>
+
+    <div>
+        <button id="btn">确定</button>
+    </div>
+
+    <script type="text/javascript">
+        var rdo = document.getElementsByName('hahah');
+        var btn = document.getElementById('btn');
+
+        btn.onclick = function() {
+            for (var i = 0, l = rdo.length; i < l; ++i) {
+                if ( rdo[i].checked === true ) {
+                    console.log(rdo[i].value);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
