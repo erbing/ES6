@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+    <style>
+        body{
+            font-size: 36px;
+        }
+        h1{
+            padding: 40px 0; 
+        }
+
+        p{
+            margin: 100px 0;
+            font-size: 60px;
+        }
+        botton{
+            color: green;
+            text-align:center;
+            width: 100%;
+        }
+    </style>
+
+<body>
+    <botton id="top">到底部</botton>
+    <h1>this is header</h1>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+
+    <h1> this is footer </h1>
+    <botton id="btm">到顶部</botton>
+
+    <script>
+        var topDom = document.getElementById("top");
+        var btnDom = document.getElementById("btm");
+
+        var bodyDOM = document.getElementsByTagName('body')[0];
+
+        topDom.addEventListener('click', function() {
+            bodyDOM.scrollTop = bodyDOM.scrollHeight;
+        });
+
+        btnDom.addEventListener('click', function() {
+            bodyDOM.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>
