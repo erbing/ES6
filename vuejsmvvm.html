@@ -1,1 +1,23 @@
+    <input type="text" id="a"> 
+    <span id="b"></span>
 
+    <script>
+
+        var obj = {};
+
+        Object.defineProperty(obj, 'hello', {
+            get: function() {
+                console.log('get 方法被调用了');
+            },
+            set: function(val) {
+                console.log('set 方法被调用了，值为' + val );
+                // document.getElementById('a').value = newVal;
+                document.getElementById('b').innerHTML = val;
+            }
+        })
+
+        document.addEventListener('keyup', function(e){
+            obj.hello = e.target.value;
+        })
+
+    </script>
