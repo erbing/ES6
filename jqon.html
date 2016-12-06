@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq on 方法原理</title>
+</head>
+<body>
+
+    <button id="btn">方法原理</button>
+    
+    <script>
+
+    var on = function( elem, type, handle) {
+        if (elem) {
+            elem.addEventListener(type, function() {
+                handle.call(this);
+            });
+
+        } else {
+            throw 'not find elements';
+        }
+    };
+
+    var dom = document.getElementById('btn');
+
+    on(btn,'click', function() {
+        console.log(this);
+        alert(11);
+    });
+
+    </script>
+
+</body>
+</html>

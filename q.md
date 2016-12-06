@@ -1,4 +1,8 @@
-### 1、获取 cookie 中 名为 zhang 的 值
+### 1、获取 cookie 中 名为 zhang 的 值 (方法)
+
+    ```javascript
+
+    ```
 
 ### 2、写一个样式 使 当前div (不限制宽高) 水平垂直居中（兼容IE6）
 
