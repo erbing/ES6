@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+    
+    <script>
+        // 单一数组去重
+        // 
+        // var arr1 = [1,2,3,4,11,1,2,0];
+        // var unique = function(arr) {
+        //     var hash = {};
+        //     var data = [];
+        //     for (var i = 0, l = arr.length; i < l; ++i) {
+        //         if (!hash[arr[i]]){
+        //             hash[arr[i]] = true;
+        //             data.push(arr[i]);
+        //         }
+        //     }
+        //     return data;
+        // }
+
+        // var res = unique(arr1);
+        // console.log(res);
+
+        // 双数组去重
+        var arr1 = [1,2,3,4,11,0];
+        var arr2 = [2,4];
+        var unique = function(arr) {
+            var hash = {};
+            var data = [];
+            for (var i = 0, l = arr.length; i < l; ++i) {
+                if (!hash[arr[i]]){
+                    hash[arr[i]] = true;
+                    data.push(arr[i]);
+                }
+            }
+            return data;
+        };
+
+        var res = unique(arr1);
+        console.log(res);
+
+
+    </script>
+
+</body>
+</html>
