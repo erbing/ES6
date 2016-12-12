@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6 class</title>
+</head>
+<body>
+    
+    <script>
+    'use static'
+
+    let Person = (() => {
+        class Person {
+            // var age = Symbol('age')
+            // 静态方法 (不实例 也可以调用的方法)
+            static jing () {
+                console.log('这个是本 类 的静态方法. 有什么作用呢？往下接着走')
+            }
+            // 共有属性
+            constructor (name) { // 构造函数
+                this.name = name
+            }
+            // 私有属性
+            sayAge () {
+                // console.log(this[age])
+            }
+            // 共有方法
+            sayName () {
+                console.log(this.name)
+            }
+            // 私有方法
+        }
+        return Person
+    })()
+    Person.jing()
+    var person = new Person('zz')
+    console.log(person)
+
+    Person.jing();
+    var person = new Person('18');
+
+    </script>
+
+</body>
+</html>

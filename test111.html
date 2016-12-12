@@ -1,0 +1,17 @@
+    var isBuy = function() {
+        window.xhr({
+            url: '/api/student/v10/order/source/query',
+            data: {
+                source: 200
+            },
+            success: function (data) {
+                model.times = data;
+            },
+            error: function (msg) {
+                model.isLoading = false;
+                model.isShowDialog = true;
+                model.msg = msg ? msg : "抽奖活动信息不存在";
+                model.isDelete = true;
+            }
+        });
+    };
