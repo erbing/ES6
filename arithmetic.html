@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>算法入门</title>
+</head>
+<body>
+    
+    <script>
+
+        var list = [
+            { id: 0, name: '中国' },
+            { id: 1, pid: 0, name: '广东省'},
+            { id: 2, pid: 1, name: '深圳市'},
+            { id: 3, pid: 1, name: '广东市'},
+            { id: 4, pid: 1, name: '中山市'},
+            { id: 5, pid: 0, name: '湖北省'},
+            { id: 6, pid: 5, name: '武汉市'},
+            { id: 7, pid: 5, name: '宜昌市'},
+            { id: 8, pid: 5, name: '襄阳市'},
+            { id: 9, pid: 0, name: '湖南省'},
+            { id: 10, pid: 9, name: '长沙市'},
+            { id: 11, pid: 9, name: '湘潭市'},
+            { id: 12, pid: 9, name: '常德市'}
+        ];
+
+        var creatTreeNode = function(list) {
+            var Tree = {};
+            for (var i = 0, l = list.length; i < l; ++i) {
+                if ( i === 0 ) {
+                    Tree.id = list[0].id;
+                    Tree.name = list[0].name;
+                    Tree.subTree = [];
+                } else {
+                    if (list[i].pid === 0) {
+                        Tree.subTree.push(list[i]);
+                    } else if (list[i].pid === list[i - 1].id) {
+                        
+                    }
+                    // var n = list[i - 1];    // 第二位
+                    // var m = list [i];       // 第三位
+                    // if (m.pid === n.id) {
+                    //     n.subTree = Tree.subTree;
+                    //     n.subTree.push(m);
+                    // }
+                }
+            }
+
+            return Tree;
+        }
+
+        var res = creatTreeNode(list);
+        console.log(res);
+
+        var ress = {
+            id: 0,
+            name: '中国',
+            subTree: [
+                {id: 1, pid: 0, name: '广东省' , subTree: [ 
+                    { id: 2, pid: 1, name: '深圳市'},
+                    { id: 3, pid: 1, name: '广东市'},
+                    { id: 4, pid: 1, name: '中山市'},
+                    ]
+                },
+                {id: 5, pid: 0, name: '湖北省' , subTree: [ 
+                    { id: 6, pid: 5, name: '武汉市'},
+                    { id: 7, pid: 5, name: '宜昌市'},
+                    { id: 8, pid: 5, name: '襄阳市'},
+                    ]
+                },
+                {id: 9, pid: 0, name: '湖南省' , subTree: [ 
+                    { id: 10, pid: 9, name: '长沙市'},
+                    { id: 11, pid: 9, name: '湘潭市'},
+                    { id: 12, pid: 9, name: '常德市'},
+                    ]
+                }
+            ]
+        }
+
+        // console.log(ress);
+    </script>
+
+</body>
+</html>
