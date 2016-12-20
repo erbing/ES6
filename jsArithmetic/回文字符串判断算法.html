@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回文字符串判断算法</title>
+</head>
+<body>
+     
+    <h1>
+        这里我们先解释一下，什么叫回文
+        如果一个字符串忽略标点符号，大小写和空格，
+        正着读 和反着读 一模一样，那么这个字符串就是
+        回文 （palindrome）
+    </h1>   
+
+    <script>
+
+        var palindrome = function(str) {
+            var reg = /\s/g;
+            var lowRegStr = str.toLowerCase().replace(reg, '');
+            console.log(lowRegStr);
+            if (lowRegStr.length === 0) {
+                return true;
+            }      
+
+            // 判断 字符串的第一个字符和最后一个字符时候相等
+            if (lowRegStr[0] !== lowRegStr[lowRegStr.length - 1]) {
+                return false
+            } else {
+                return palindrome(lowRegStr.slice(1, lowRegStr.length - 1))
+            }
+        }
+
+        var res = palindrome('zxcv3V C XZ');
+        console.log(res);
+
+    </script>
+
+</body>
+</html>

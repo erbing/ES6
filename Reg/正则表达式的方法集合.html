@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式的方法集合</title>
+</head>
+<body>
+    
+    <h1>
+        我们常见的正则表达式的 方法有哪些？
+        match test replace search split
+        下面我们将 一一介绍这 五种 正则表达式的方法
+    </h1>
+
+
+    <script>
+
+        /*
+         * @function  test 
+         * @result    true || false
+         * 总结： test 方法 在与正则 结合使用的时候 适合 去做验证类的 （因为返回 true or false）
+         */
+
+         var Reg = /c$/;
+         var res = Reg.test('dsadagedsabc');
+         // console.log(res);  true
+
+         /*
+         * @function  exec 
+         * @result    [] || null
+         * 总结： exec 方法为指定的一段字符串执行搜索匹配操作
+         */
+        var re = /ab*/g;
+        var res1 = re.exec('dsadasdasdsabcsbvavabc');
+        console.log(res1);
+
+    </script>
+
+</body>
+</html>
