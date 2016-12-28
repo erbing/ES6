@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排列算法（可重复元素）</title>
+</head>
+<body>
+    
+    <script>
+        var str = "1,2,3,4,5";
+        var resArr = str.split(','); 
+        console.log(resArr);
+
+        var len = resArr.length;
+        var newArr = [];
+        for(var i=0;i<len;i++){
+            for(var j=0;j<len;j++){
+                 for(var k=0;k<len;k++){
+                    newArr.push(resArr[i]+" "+resArr[j]+" "+resArr[k]);
+                 }
+            }
+        }
+
+        var leng = newArr.length;
+        console.log(leng);
+
+         for(i=0;i<newArr.length;i++){
+           document.write(newArr[i] + "&nbsp;");
+         }
+    </script>
+
+</body>
+</html>
