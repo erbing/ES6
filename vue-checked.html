@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="card">
+        <h3 class="card-header">Cart</h3>
+        <div class="card-block">
+            <div id="app">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label class="c-input c-checkbox">
+                            <input type="checkbox" v-model="allSelected">Select All
+                            <span class="c-indicator"></span>
+                        </label>
+                    </div>
+                    <div class="col-xs-2">
+                        Goods
+                    </div>
+                    <div class="col-xs-5">
+                        Number
+                    </div>
+                    <div class="col-xs-2">
+                        Money
+                    </div>
+                </div>
+                <form>
+                    <div class="row" v-for="(index, item) in items">
+                        <div class="col-xs-3">
+                            <label class="c-input c-checkbox">
+                                <input type="checkbox" v-model="item.selected">
+                                <span class="c-indicator"></span>
+                            </label>
+                        </div>
+                        <div class="col-xs-2">
+                            {{ item.message }}
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenu1"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        v-text="item.num">
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li v-for="n in nums">
+                                        <a class="dropdown-item" @click="fillIn(index, n)">{{n}}个</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            {{ item.price * item.num }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            Sum
+                        </div>
+                        <div class="col-xs-2">
+
+                        </div>
+                        <div class="col-xs-5">
+
+                        </div>
+                        <div class="col-xs-2">
+                            {{ sum }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" :disabled="sum === 0" @click="send">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

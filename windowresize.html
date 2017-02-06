@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title> new document </title> 
+  <style>html,body{border:5px solid #06F;}</style> 
+</head> 
+ 
+<body onresize="a();"> 
+   <div id="show">0</div>   
+   <div id="div" style="border:1px solid #000"></div>   
+   <textarea id="re" cols="30" rows="6"></textarea>  
+    <script>   
+    var re=document.getElementById("re"); 
+     //同时定义body与window的onresize 
+     //ff下window上的启作用，ff下，用js定义在body上不启作用 
+     //ie chrome opra下 根据body与window定义的先后顺序 后定义的覆盖先定义的 
+ 
+     //在任意浏览器下，js定义的会覆盖在标签上直接定义的onresize事件。 
+      
+     document.body.onresize=function () { 
+        re.value+='this is body js resize.\n'; 
+     } 
+     window.onresize=function () { 
+        console.log(document.body.clientWidth);
+        re.value+='this is window resize.\n'; 
+     }  
+     
+     //使用listener监听事件只能在window上，在body上无效。 
+     bind(document.body,"resize",function(){ 
+        re.value+='this is body  resize in litener.\n'; 
+     }); 
+     bind(window,"resize",function(){ 
+        re.value+='this is window  resize in litener.\n'; 
+     }); 
+     function a() { 
+         re.value+=("this is body html resize\n"); 
+     } 
+    //任意html元素，改变内容，是否触发onresize，则只有ie下启作用 
+    var i = 0;   
+    var div=document.getElementById("div"); 
+    var show=document.getElementById("show"); 
+    div.onresize = function(){ show.innerHTML = ++i; }   
+    setTimeout('div.innerHTML="test"', 1000)   
+    setTimeout('div.style.height="50px"', 2000)  ; 
+    
+   function bind(el,eventName,fn) { 
+        if (window.addEventListener) { 
+            el.addEventListener(eventName, fn,false); 
+        } else if (window.attachEvent) { 
+                el.attachEvent("on" + eventName, fn); 
+        }  
+   } 
+   </script>   
+</body> 
+</html> 
