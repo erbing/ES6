@@ -12,6 +12,7 @@ function _lazyMan(name) {
     this.tasks.push(fn);
     setTimeout(function() {
         that.next();
+
     },0)
 }
 
@@ -49,8 +50,9 @@ _lazyMan.prototype.eat = function() {
 
 /* 封装 */
 function lazyMan(name) {
+    console.log(new _lazyMan(name));
     return new _lazyMan(name);
 }
 
-lazyMan('zz').eat().sleep();
+lazyMan('zz').eat().sleep().eat();
 lazyMan('zz').sleep().eat();
